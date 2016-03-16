@@ -51,13 +51,13 @@ colnames(subdata) <- msColNames
 tidydata <- subdata[order(subdata$Subject,subdata$Activity),]
 
 # Write tidied-up data to file
-write.fwf(x=tidydata, file="tidyData.txt")
+# write.fwf(x=tidydata, file="tidyData.txt")
 
 #-Create a new dataframe for the average values
 lists <- list(Subject=subdata$Subject,Activity=subdata$Activity)
 agrdata <- aggregate(subdata[,3:ncol(subdata)],lists, mean)
 
 # Write tidied-up data to file
-write.fwf(x=agrdata, file="averData.txt")
+write.table(x=agrdata, file="tidyData.txt", row.names = FALSE)
 
 
