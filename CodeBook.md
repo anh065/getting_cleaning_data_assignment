@@ -40,7 +40,7 @@ subject and activity for each data row can be found in 'y_\*.txt' and 'subject_\
 The main variables are:
 
 - The activity labels which can be WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, or LAYING
-- The volunders/subjects represented by a number in the range from 1 to 30
+- The volunders/subjects represented by numbers in the range from 1 to 30
 - The measurement types or features. There are many types of data in the dataset
   but only data concerning the means and the corresponding standard deviations will be extracted and used.
   
