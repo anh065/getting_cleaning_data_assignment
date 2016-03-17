@@ -23,7 +23,7 @@ mSubj     <- rbind(trainSubj,testSubj)
 # Extract measurements on the mean and std deviation for each measurement
 featureFile  <- paste(dataDir,"features.txt",sep="/")
 features <- read.table(featureFile)
-msCols <- grep("mean()|std()",features[,2])
+msCols <- grep("mean\\(\\)|std\\(\\)",features[,2])
 subdata <- mData[,msCols]
 
 # Use descriptive activity names to name the activities in the data set
@@ -42,7 +42,7 @@ for (i in 1:nrow(mActy)) {
 subdata <- cbind(mSubj,mActy[,2],subdata)
 
 # Labels the extracted data with descriptive variable names
-msColNames <- grep("mean()|std()",features[,2],value=TRUE)
+msColNames <- grep("mean\\(\\)|std\\(\\)",features[,2],value=TRUE)
 msColNames <- c("Subject","Activity",msColNames)
 colnames(subdata) <- msColNames
 
