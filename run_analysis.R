@@ -10,8 +10,10 @@ trainSubjFile <- paste(trainDataDir,"subject_train.txt",sep="/")
 testSubjFile  <- paste(testDataDir,"subject_test.txt",sep="/")
 
 # Read in and merge train and test data
-trainData <- read.fwf(trainDataFile,widths=c(rep(16,561)))
-testData  <- read.fwf(testDataFile, widths=c(rep(16,561)))
+#trainData <- read.fwf(trainDataFile,widths=c(rep(16,561)))
+#testData  <- read.fwf(testDataFile, widths=c(rep(16,561)))
+trainData <- read.table(trainDataFile, header = FALSE)
+testData  <- read.table(testDataFile, header = FALSE)
 mData     <- rbind(trainData,testData)
 trainActy <- read.table(trainActyFile,header=FALSE)
 testActy  <- read.table(testActyFile, header=FALSE)
