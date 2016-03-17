@@ -44,6 +44,8 @@ subdata <- cbind(mSubj,mActy[,2],subdata)
 # Labels the extracted data with descriptive variable names
 msColNames <- grep("mean\\(\\)|std\\(\\)",features[,2],value=TRUE)
 msColNames <- c("Subject","Activity",msColNames)
+msColNames <- gsub("\\(","",msColNames)
+msColNames <- gsub("\\)","",msColNames)
 colnames(subdata) <- msColNames
 
 # Tidy up the extracted data
