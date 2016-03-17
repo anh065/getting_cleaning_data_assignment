@@ -60,6 +60,7 @@ tidydata <- subdata[order(subdata$Subject,subdata$Activity),]
 #-Create a new dataframe for the average values
 lists <- list(Subject=subdata$Subject,Activity=subdata$Activity)
 agrdata <- aggregate(subdata[,3:ncol(subdata)],lists, mean)
+agrdata <- agrdata[order(agrdata$Subject,agrdata$Activity),]
 
 # Write tidied-up data to file
 write.table(x=agrdata, file="tidyData.txt", row.names = FALSE)
